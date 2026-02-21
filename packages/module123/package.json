@@ -1,0 +1,29 @@
+{
+  "name": "module123",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "build:container": "rm -rf out && pnpm build && pnpm deploy --prod --filter=. out  && docker build -t mock:latest .",
+    "clean": "rm -rf dist",
+    "start": "node dist/index.js"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.29.2",
+  "dependencies": {
+    "axios": "^1.13.5"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.5",
+    "@tsconfig/recommended": "^1.0.13",
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  }
+}
