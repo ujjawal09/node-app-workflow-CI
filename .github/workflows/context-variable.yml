@@ -1,1 +1,20 @@
+name: Testing Context variable
 
+on: 
+  workflow_dispatch
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  greeting_job:
+
+    runs-on: ubuntu-latest
+ 
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: "Say Hello context cariable"
+        run: |
+          echo "Repository name: ${{github.repository}}"
+          echo "Workflow name: ${{github.workflow}}"
+          echo "Trigger By: ${{github.triggering_actor}}"
+       
